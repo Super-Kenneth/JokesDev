@@ -37,8 +37,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className=" h-screen w-full bg-blue-950 flex flex-col justify-center items-center">
-      <div className=" bg-white rounded-t-2xl shadow-2xl h-[40%] w-[90%] md:w-[50%] flex flex-col items-center justify-center p-6 text-center overflow-y-scroll">
+    <main className=" bg-[url('/bg.png')] bg-contain relative h-screen w-full flex flex-col justify-center items-center">
+      <div className=" bg-[rgba(255,255,255,0.9)] rounded-t-2xl shadow-2xl h-[40%] w-[90%] md:w-[50%] flex flex-col items-center justify-center p-6 text-center overflow-y-scroll break-words">
         {loading ? (
           <Image
             src="/loading.svg"
@@ -64,14 +64,17 @@ export default function Home() {
           </div>
         )}
       </div>
-      <div className=" w-[90%] h-[10%] md:w-[50%] bg-white rounded-b-2xl flex justify-center items-center">
+      <div className=" w-[90%] h-[10%] md:w-[50%] bg-[rgba(255,255,255,0.9)] rounded-b-2xl flex justify-center items-center">
         <button
           onClick={() => window.location.reload()}
-          className=" bg-blue-950 p-4 text-white rounded-xl cursor-pointer"
+          className=" bg-blue-950 p-4 text-white rounded-xl cursor-pointer hover:opacity-80"
         >
-          Other joke
+          Joke Me Again
         </button>
       </div>
+      <p className=" font-bold text-black rounded-lg p-2 bg-[rgba(255,255,255,0.9)] absolute bottom-4 left-4 text-lg">
+        !JokesDev by Kenneth Manuel
+      </p>
     </main>
   );
 }
